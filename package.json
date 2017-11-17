@@ -4,7 +4,8 @@
   "description": "A valuable resource for scholars of classical literature and history.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server-start": "nodemon ./backend/server.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,26 @@
   "bugs": {
     "url": "https://github.com/Juliafin/clibrary/issues"
   },
-  "homepage": "https://github.com/Juliafin/clibrary#readme"
+  "homepage": "https://github.com/Juliafin/clibrary#readme",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "babel": "^6.23.0",
+    "body-parser": "^1.18.2",
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "dotenv": "^4.0.0",
+    "enzyme": "^3.2.0",
+    "express": "^4.16.2",
+    "faker": "^4.1.0",
+    "jest": "^21.2.1",
+    "mocha": "^4.0.1",
+    "mongoose": "^4.13.3",
+    "nodemon": "^1.12.1",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "webpack": "^3.8.1"
+  }
 }
