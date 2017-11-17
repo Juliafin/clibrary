@@ -1,0 +1,26 @@
+{
+  "name": "clibrary_final_project",
+  "version": "1.0.0",
+  "description": "A valuable resource for scholars of classical literature and history.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Juliafin/clibrary.git"
+  },
+  "keywords": [
+    "classics",
+    "literature",
+    "history",
+    "final",
+    "project"
+  ],
+  "author": "Julia Finarovsky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Juliafin/clibrary/issues"
+  },
+  "homepage": "https://github.com/Juliafin/clibrary#readme"
+}
