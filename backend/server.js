@@ -3,6 +3,7 @@ require('dotenv').config({path: './backend/config_variables/.env'});
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const cwkb = require('./initDb/cwkb');
 
 mongoose.Promise = global.Promise;
 
@@ -26,7 +27,8 @@ let server;
 
 const runServer = (port = process.env.SERVER_PORT, dbURL = process.env.MONGO_URL) => {
   return new Promise ((resolve, reject) => {
-
+    console.log(cwkb);
+    cwkb();
     server = app.listen(port, () => {
       console.log(`Server running on port ${port}`);
     })
@@ -40,6 +42,7 @@ const runServer = (port = process.env.SERVER_PORT, dbURL = process.env.MONGO_URL
       server.close();
     } )
     dbConnection.once('open', () => {
+      dbConnection.dropDatabase();
       console.log('Mongoose connection successful');
     })
 
