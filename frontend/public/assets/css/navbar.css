@@ -1,0 +1,7 @@
+nav.navbar {
+  display: flex;
+  position: fixed;
+  top: 0;
+  height: 10rem;
+  width: 100%;
+}

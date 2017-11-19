@@ -3,12 +3,20 @@ require('dotenv').config({path: './backend/config_variables/.env'});
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const cwkb = require('./initDb/cwkb');
+const cwkb = require('./backend/initDb/cwkb');
+const path = require('path');
 
 mongoose.Promise = global.Promise;
 
 
 app.use(bodyParser.json());
+app.use(express.static('frontend/public'))
+
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname + '/frontend/public/index.html'));
+})
+
 
 app.get ('/test', (req, res) => {
   return res.json({message: "This works :\)"})

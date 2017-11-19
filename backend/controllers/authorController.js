@@ -1,7 +1,17 @@
 const Author = require('./../models/author');
 
 module.exports = {
-  authorCreate : (author) => {
+  authorCreate : (author, initial=false) => {
+    if (initial) {
+      return Author.findAll()
+      .count()
+      .then( (count) => {
+        if (count > 0) {
+          return;
+        }
+      })
+      
+    }
     return Author
       .create(author, {new:true})
       .then((response) => {

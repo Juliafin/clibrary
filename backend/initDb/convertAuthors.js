@@ -1,9 +1,10 @@
 const {authorCreate} = require('./../controllers/authorController');
 
+
 module.exports = (data) => {
   var authors = [];
   for (var key in data) {
-    if (!key) {
+    if (!data[key]) {
       console.log('NO KEY')
       continue;
     }
