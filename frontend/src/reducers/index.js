@@ -1,5 +1,5 @@
 const initialState = {
-  navbarOptions: ["Home", "Login", "Register"]
+  navbarOptions: [["Home", "home"], ["Login", "user"], ["Register", "sign in"]]
 };
 
 export const clibraryReducer = (state = initialState, action) => {

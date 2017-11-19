@@ -4,4 +4,6 @@ nav.navbar {
   top: 0;
   height: 10rem;
   width: 100%;
+  background: white;
+  justify-content: space-around;
 }
