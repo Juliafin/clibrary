@@ -1,13 +1,13 @@
 const path = require('path');
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
-
   entry: 
-  ['./frontend/src/index.js'],
+  './frontend/src/index.js',
   output: {
     filename: 'bundle.js',
-    path: path.join(__dirname, '/frontend/public/assets/js/'),
-    publicPath: '/frontend/public/assets/js/'
+    path: path.join(__dirname, 'frontend/public/assets/'),
+    publicPath: '/frontend/public/assets/'
   },
   module: {
     loaders: [
@@ -23,15 +23,10 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use : [{
-          loader: 'style-loader',
-          options: {
-            sourcemap: true
-          }
-        },
-        {  
-          loader: 'css-loader'
-        }]
+        use : ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader'
+        })
       },
       {
         test: /(?=\.jpe?g$)|(?=\.png$)|(?=\.gif$)|(?=\.svg$)/,
@@ -45,7 +40,8 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new ExtractTextPlugin('styles.css')
   ],
   devtool: 'source-map',
   devServer: {
@@ -55,7 +51,7 @@ module.exports = {
     port: 9001,
     compress: true,
     watchContentBase: true,
-    hot: true
+    hot: true,
   }
 }
 

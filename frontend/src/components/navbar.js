@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Icon} from 'semantic-ui-react';
-import './../../public/assets/css/navbar.css';
+import './../css/navbar.css';
 import {Link} from 'react-router-dom';
 class Navbar extends Component {
   render () {

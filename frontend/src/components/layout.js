@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Home from './home';
 import Login from './login';
 import Register from './register';
-import './../../public/assets/css/layout.css';
+import './../css/layout.css';
 export default class Layout extends Component{
  
   render() {

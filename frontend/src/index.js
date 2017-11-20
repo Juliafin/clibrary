@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Layout from './components/layout';
 import {Provider} from 'react-redux';
 import store from './store';
-import './../public/assets/css/app.css';
+import './css/app.css';
 
 
 console.log('afladfsdf')
