@@ -10,7 +10,8 @@ mongoose.Promise = global.Promise;
 
 
 app.use(bodyParser.json());
-app.use(express.static('frontend/public'))
+app.use(express.static('frontend/public'));
+app.use(express.static('frontend/public/assets/'));
 
 
 app.get('/', (req, res) => {

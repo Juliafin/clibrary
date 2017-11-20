@@ -2,8 +2,9 @@ nav.navbar {
   display: flex;
   position: fixed;
   top: 0;
-  height: 10rem;
+  height: 5rem;
   width: 100%;
-  background: white;
+  background: rgb(20, 20, 20);
   justify-content: space-around;
+  align-items: center;
 }

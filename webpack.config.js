@@ -7,7 +7,7 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.join(__dirname, '/frontend/public/assets/js/'),
-    publicPath: '/frontend/public/assets/js'
+    publicPath: '/frontend/public/assets/js/'
   },
   module: {
     loaders: [
@@ -33,6 +33,15 @@ module.exports = {
           loader: 'css-loader'
         }]
       },
+      {
+        test: /(?=\.jpe?g$)|(?=\.png$)|(?=\.gif$)|(?=\.svg$)/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]'
+          }
+        }
+      },
     ]
   },
   plugins: [
@@ -49,3 +58,5 @@ module.exports = {
     hot: true
   }
 }
+
+

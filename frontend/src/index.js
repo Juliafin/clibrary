@@ -5,12 +5,13 @@ import {Provider} from 'react-redux';
 import store from './store';
 import './../public/assets/css/app.css';
 
+
 console.log('afladfsdf')
 ReactDOM.render(
 <Provider store={store}>
   <Layout/>
 </Provider>, 
-document.getElementById('daapp'))
+document.getElementById('app'))
 
 
 if(module.hot){
