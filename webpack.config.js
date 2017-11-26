@@ -1,13 +1,27 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 module.exports = {
-  entry: 
-  './frontend/src/index.js',
+  entry:[
+    'react-hot-loader/patch',
+    // activate HMR for React
+
+    'webpack-dev-server/client?http://localhost:3000',
+    // bundle the client for webpack-dev-server
+    // and connect to the provided endpoint
+
+    'webpack/hot/only-dev-server',
+    // bundle the client for hot reloading
+    // only- means to only hot reload for successful updates
+
+    './frontend/src/index.js',
+    // the entry point of our app
+  ],
   output: {
     filename: 'bundle.js',
-    path: path.join(__dirname, 'frontend/public/assets/'),
-    publicPath: '/frontend/public/assets/'
+    path: path.join(__dirname, 'frontend/public/dist/'),
+    publicPath: '/dist/'
   },
   module: {
     loaders: [
@@ -15,10 +29,7 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-          query: {
-            presets: ['react', 'es2015', 'env']
-          }
+          loader: 'babel-loader'
         }
       },
       {
@@ -41,7 +52,8 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin('styles.css')
+    new ExtractTextPlugin('styles.css'),
+    new webpack.NamedModulesPlugin()
   ],
   devtool: 'source-map',
   devServer: {
@@ -49,10 +61,11 @@ module.exports = {
       ignored: /node_modules/
     },
     port: 9001,
+    contentBase: path.join(__dirname, 'frontend/public/'),
+    historyApiFallback: true,
     compress: true,
-    watchContentBase: true,
     hot: true,
+    publicPath: '/dist/'
   }
 }
-
 

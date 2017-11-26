@@ -2,15 +2,20 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Layout from './components/layout';
 import {Provider} from 'react-redux';
+import {AppContainer} from 'react-hot-loader'
 import store from './store';
 import './css/app.css';
 
 
-console.log('afladfsdf')
+console.log('afladfsdf');
+
 ReactDOM.render(
+  <AppContainer>
 <Provider store={store}>
   <Layout/>
-</Provider>, 
+</Provider>
+</AppContainer>
+, 
 document.getElementById('app'))
 
 

@@ -12,14 +12,14 @@ export default class Layout extends Component{
     console.log('navbar', Navbar);
     return (
       <Router>
-      <div className="main">
-        <Navbar/>
-        <h1>React OMASDFADSLKADF Hello !!</h1>
-        <Route exact path="/home" component={Home} />
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/login" component={Login} />
+        <div className="main">
+          <Navbar/>
+          <h1>React OMASDFADSLKADF Hello !!</h1>
+          <Route exact path="/home" component={Home} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
 
-      </div>
+        </div>
       </Router>
     )
   }
