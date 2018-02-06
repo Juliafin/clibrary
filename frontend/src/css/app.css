@@ -3,3 +3,7 @@ body {
   width: 100%;
   font-size: 16px;
 }
+
+div.main h1 {
+  color: rgb(61, 197, 43);
+}

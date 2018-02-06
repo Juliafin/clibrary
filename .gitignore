@@ -1,3 +1,4 @@
 node_modules
 backend/config_variables/.env
 .env
+config_variables

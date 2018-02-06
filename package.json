@@ -40,6 +40,7 @@
     "mocha": "^4.0.1",
     "mongoose": "^4.13.3",
     "nodemon": "^1.12.1",
+    "python": "0.0.4",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-hot-loader": "^3.1.3",

@@ -7,7 +7,7 @@ module.exports = {
     'react-hot-loader/patch',
     // activate HMR for React
 
-    'webpack-dev-server/client?http://localhost:3000',
+    'webpack-dev-server/client?http://localhost:9001',
     // bundle the client for webpack-dev-server
     // and connect to the provided endpoint
 
@@ -34,10 +34,9 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use : ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader'
-        })
+        loaders: [
+          'style-loader', 'css-loader'
+        ]
       },
       {
         test: /(?=\.jpe?g$)|(?=\.png$)|(?=\.gif$)|(?=\.svg$)/,
@@ -69,3 +68,9 @@ module.exports = {
   }
 }
 
+
+
+// use : ExtractTextPlugin.extract({
+//   fallback: 'style-loader',
+//   use: 'css-loader'
+// })

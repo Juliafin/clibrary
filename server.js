@@ -3,7 +3,6 @@ require('dotenv').config({path: './backend/config_variables/.env'});
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const cwkb = require('./backend/initDb/cwkb');
 const path = require('path');
 
 mongoose.Promise = global.Promise;
@@ -14,10 +13,9 @@ app.use(express.static(__dirname + '/frontend/public'));
 // app.use(express.static('frontend/public/assets/'));
 
 
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '/frontend/public/index.html'));
 })
-
 
 app.get ('/test', (req, res) => {
   return res.json({message: "This works :\)"})
@@ -36,8 +34,6 @@ let server;
 
 const runServer = (port = process.env.SERVER_PORT, dbURL = process.env.MONGO_URL) => {
   return new Promise ((resolve, reject) => {
-    console.log(cwkb);
-    cwkb();
     server = app.listen(port, () => {
       console.log(`Server running on port ${port}`);
     })
@@ -59,11 +55,6 @@ const runServer = (port = process.env.SERVER_PORT, dbURL = process.env.MONGO_URL
     
   })
 };
-
-
-// const mongooseConnection = (dbURL = process.env.MONGO_URL) => {
-  
-// }
 
 
 
